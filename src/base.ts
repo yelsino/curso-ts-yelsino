@@ -157,7 +157,6 @@ ejercios.
 	-convertir nombres a carros
 
 
-si no sabe decir no.
  */
 
 // destructuracion de objetos
