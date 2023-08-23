@@ -1,7 +1,7 @@
 // **Nivel Principiante:**
 
 // 1. Obtén la lista completa de clientes.
-// 2. Obtén la lista completa de vehículos.
+
 // 3. Obtén la lista completa de ventas.
 // 4. Encuentra el cliente con el código "CL-002" y muestra su nombre.
 // 5. Encuentra el vehículo con el código "VL-005" y muestra su marca.

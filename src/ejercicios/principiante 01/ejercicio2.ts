@@ -1,0 +1,1 @@
+// 2. Obtén la lista completa de vehículos.
