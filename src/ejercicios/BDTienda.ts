@@ -6,6 +6,7 @@ enum Marcas {
     NISSAN = "Nissan",
 }
 
+
 export interface Vehiculo {
     nombre: string;
     marca: Marcas;
@@ -27,6 +28,8 @@ export interface Venta {
     codigo: string;
 }
 
+
+// DATA 
 export const BDTienda = {
     clientes: [
         {
