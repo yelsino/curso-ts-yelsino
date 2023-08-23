@@ -1,0 +1,1 @@
+// 4. Encuentra el cliente con el código "CL-002" y muestra su nombre.
