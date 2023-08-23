@@ -15,7 +15,8 @@ function encontrarVehiculoXcodigo(codigo:string){
     }
 
     
-    return vehiculoEncontrado.codigo
+    return console.log(vehiculoEncontrado);
+    
 
     // const vehiculoEncontrado = BDTienda.vehiculos.find();
 
