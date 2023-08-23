@@ -6,6 +6,6 @@ function encontrarVehiculoXcodigo(codigo) {
     if (!vehiculoEncontrado) {
         return 'VEHICULO NO ENCONTRADO';
     }
-    return console.log(vehiculoEncontrado.marca);
+    return vehiculoEncontrado.codigo;
 }
 encontrarVehiculoXcodigo('VL-001');
