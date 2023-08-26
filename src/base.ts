@@ -196,3 +196,24 @@ const montoTotal: number = vehiculos.reduce((acc,vehiculo)=>{
     return suma
 
 },0);
+
+
+
+// convertir tipo de datos a otro tipo datos 
+/**
+*number
+* string
+* boolean
+* arrays
+* object
+* function
+ */
+
+const numero50 = "50";
+
+'323232'
+Number(numero50); // 50
+String(numero50); // "50"
+Date() // recibe todos los metodos para trabajar fechas 
+Array(numero50) // ['50'] 
+
