@@ -22,6 +22,7 @@ const clientesQueCompraron = clientes.filter((cliente) => {
     if (clienteHaComprado) {
         return cliente;
     }
+    
 });
 
 console.log(clientesQueCompraron);

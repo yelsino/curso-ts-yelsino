@@ -212,8 +212,11 @@ const montoTotal: number = vehiculos.reduce((acc,vehiculo)=>{
 const numero50 = "50";
 
 '323232'
+
+
 Number(numero50); // 50
 String(numero50); // "50"
 Date() // recibe todos los metodos para trabajar fechas 
 Array(numero50) // ['50'] 
+
 
