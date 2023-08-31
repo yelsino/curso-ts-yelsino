@@ -4,22 +4,20 @@ import { BDTienda } from "../BDTienda";
 
 BDTienda;
 
-// const scd : Carro[] = vehiculos.filter((vehiculo) => {
-//     if(vehiculo.marca === 'Fiat'){
-//         return vehiculo
-//     }
 
-// });
 
-const guardar = BDTienda.clientes.map(function (cliente) {
+const listadeVentas = BDTienda.ventas.map(function (venta) {
   return (
-    `nombres:` +
-    `   ${cliente.nombre}` +
+    `cliente:` +
+    `   ${venta.cliente}` +
     ` codigo: ` +
-    ` ${cliente.codigo}` +
-    ` N de documento:` +
-    `${cliente.documento}`
+    ` ${venta.codigo}` +
+    ` fechadecompra:` +
+    `${venta.fechaCompra}`
+    +
+      ` vehiculo:` +
+      `${venta.vehiculo}`
   );
 });
 
-console.log(guardar);
+console.log(listadeVentas);

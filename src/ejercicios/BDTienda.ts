@@ -1,4 +1,4 @@
-enum Marcas {
+export enum Marcas {
     TOYOTA = "Toyota",
     FORD = "Ford",
     CHEVROLET = "Chevrolet",
