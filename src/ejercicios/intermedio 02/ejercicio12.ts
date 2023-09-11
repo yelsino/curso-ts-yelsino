@@ -1,120 +1,51 @@
 // 12. Encuentra el cliente que ha realizado más compras.
-import { cachedDataVersionTag } from "v8";
+
 import { BDTienda } from "../BDTienda";
-import {
-  couldStartTrivia,
-  displayPartsToString,
-  getAllJSDocTagsOfKind,
-  isJSDocReturnTag,
-} from "typescript";
-import { log } from "console";
 
-///x///////x///////x///////x///////x///////x////
+// clientes - ventas - vehiculos
 
-// filtrar compra de vehiculo de cada cliente    codigocliente  codigovehiculo venta
-// obtner los precios
-// sumar compras de cada cliente
-// realizar una comparcion  que cada cliente gasto
-// en vehiculo  precio
-// 10 autos
-// 3 clientes
-// 10 ventas
-// filtrar
+const clientes = BDTienda.clientes;
+const ventas = BDTienda.ventas;
+const vehiculos = BDTienda.vehiculos;
 
-///x///////x///////x///////x///////x///////x///////x///////x///////x///////x///////x///////x////
+interface DatoCompra {
+    codigoCliente: string;
+    nombreCliente: string;
+    compraTotal: number;
+}
 
-const codDeVehiculosDeCliente = BDTienda.ventas.filter(
-  (v) => v.cliente === "CL-001"
-);
+function clienteMasGasto() {
+    const datoCompras: DatoCompra[] = clientes.map((cliente) => {
+        // compras cliente actual
+        const comprasCliente = ventas.filter((venta) => {
+            if (cliente.codigo === venta.cliente) {
+                return venta;
+            }
+        });
 
-// const filtrandoventas = BDTienda.vehiculos.filter((vehiculo)=>
-// // codComprasDeCliente.join("") === vehiculo.codigo
+        // vehiculos asociados a la compra
+        const compraTotal = comprasCliente.reduce((total, venta) => {
+            const vehiculoEncontrado = vehiculos.find(
+                (vehiculo) => vehiculo.codigo == venta.vehiculo
+            );
 
-// )
-// con
-// console.log(codComprasDeCliente);
-// console.log(filtrandoventas);
+            if (!vehiculoEncontrado) return 0;
 
-// const codigosVehiculos = comprasDeCliente.filter((p)=>
-// p.vehiculo. === "VL"
-// )
-// console.log(codigosVehiculos);
+            return total + vehiculoEncontrado.precio;
+        }, 0);
 
-///x///////x///////x///////x///////x///////x///////x///////x///////x///////x///////x///////x////
-// function ClienteConMasCompraVehiculo(codigoveh: string) {
-// const listaDeClientes = BDTienda.clientes.map((cliente) =>
-// console.log(cliente.codigo)
-//      )
+        return {
+            codigoCliente: cliente.codigo,
+            nombreCliente: cliente.nombre,
+            compraTotal: compraTotal,
+        };
+    });
 
-// const encontrarCodVehic = BDTienda.ventas.filter((venta) => {
-// const vehiculosvendidos = BDTienda.vehiculos.find(
-//   (vehiculo) => vehiculo.vendido === true && vehiculo.codigo === codigoveh
-// );
-// console.log(vehiculosvendidos);
-// const codigoveh= "VL-002"
-//   const filtraDatosVenta = BDTienda.ventas.find((venta) =>
-//    venta.vehiculo === codigoveh
+    const mejorCliente = datoCompras.reduce((acc, curr) => {
+        return acc.compraTotal < curr.compraTotal ? curr : acc;
+    });
 
-//    );
-//   console.log(filtraDatosVenta);
-// console.log(codigoveh);
+    return mejorCliente;
+}
 
-// }
-//     )
-
-// }
-
-// ClienteConMasCompraVehiculo("VL-002")
-
-///x///////x///////x///////x///////x///////x///////x///////x///////x///////x///////x///////x////
-//Ejercicio usando operador ternario:  cuando use console log, imprime de lo contrario no
-// function validacioDeCliente(codigo:string) {
-
-//     codigo.length > 7 ? console.log("es masyor que 7")
-//      : "es menor que 7" }
-// validacioDeCliente("hyu")
-// const  codigoveh = "VL-002 "
-// const cadsda = BDTienda.clientes.filter((c) => {
-//    c.codigo === "CL-001"
-//  }
-
-//  );
-//  console.log(cadsda);
-// console.log(codigoveh);
-
-// function llamar(codigo:string) {
-//     const clientes = BDTienda.clientes.find((x)=>{ x.codigo
-//       if (x.codigo == codigo) {   const filtroDeNombre = x.codigo;
-//         return   console.log(filtroDeNombre);
-//                }  else  console.log("NO hay nada");
-
-//    })
-
-// }
-// llamar("BHJVH")
-
-// function llamar(codigo:string) {
-//     const clientes = BDTienda.clientes.find((cliente)=>
-//     cliente.codigo === codigo
-//    );
-//  if  (cliente.codigo === codigo)  else return "vfcgfcgf"
-
-// if (!clientes) return console.log("nada");
-// console.log(clientes);
-
-// const encontrarCodVehic= BDTienda.ventas.filter((venta)=>{
-// cliente.codigo === venta.codigo ?  venta : "no se puede continuar con el proceso"
-// const filtarcodigoVenta= BDTienda.ventas.find((venta)=>
-// clientes.codigo === venta.cliente)
-// // console.log(filtarcodigoVenta);
-
-// const filtrarVentasCliente =BDTienda.vehiculos.filter((vehiculo)=>
-// filtarcodigoVenta?.vehiculo === vehiculo.codigo
-
-// );
-// console.log(filtrarVentasCliente);
-
-// // })
-
-// }
-// llamar("CL-002")
+clienteMasGasto();
