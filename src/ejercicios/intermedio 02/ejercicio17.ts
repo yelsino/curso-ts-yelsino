@@ -15,10 +15,9 @@ import { BDTienda } from "../BDTienda";
 // NOMBRE
 // DNI
 
-interface Ventas {}
 
 const ventaTotalXCliente = (textofind: string) => {
-    if (!textofind) return;
+    if (!textofind) return 'NO HAS ENVIADO EL DOCUMENTO O DNI';
 
     const cliente = BDTienda.clientes.find(
         (cliente) =>
@@ -27,6 +26,7 @@ const ventaTotalXCliente = (textofind: string) => {
 
     if (!cliente) return "CLIENTE NO ENCONTRADO";
 
+    // [{},{}]
     const comprasCliente = BDTienda.ventas.filter(
         (venta) => venta.cliente === cliente.codigo
     );
@@ -51,7 +51,6 @@ const ventaTotalXCliente = (textofind: string) => {
     // curr 1000
     // total = 1000
     const montoTotalVenta = comprasCliente.reduce((prev, curr) => {
-
         // buscar dato del vehiculo
         const vehiculoEncontrado = BDTienda.vehiculos.find(
             (vehiculo) => vehiculo.codigo === curr.vehiculo

@@ -220,3 +220,14 @@ Date() // recibe todos los metodos para trabajar fechas
 Array(numero50) // ['50'] 
 
 
+// OPERADOR TERNARIO
+/**
+ * Sirve para comparar valores como el if 
+*/
+
+const positivo = true;
+// const negativo = false;
+
+const resultado = positivo === true ? 'es positivo' : 'es negativo' 
+
+console.log(resultado);
