@@ -10,3 +10,5 @@ const vehiculosMcToyota = BDTienda.vehiculos.filter((v) => {
 return  v.marca === Marcas.TOYOTA 
 
 })  
+
+console.log(vehiculosMcToyota)

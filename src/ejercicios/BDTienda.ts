@@ -6,30 +6,6 @@ export enum Marcas {
     NISSAN = "Nissan",
 }
 
-
-export interface Vehiculo {
-    nombre: string;
-    marca: Marcas;
-    vendido: false;
-    precio: number;
-    codigo: string;
-}
-
-export interface Cliete {
-    nombre: string;
-    documento: string;
-    codigo: string;
-}
-
-export interface Venta {
-    cliente: Cliete;
-    vehiculo: Vehiculo;
-    fechaCompra: Date;
-    codigo: string;
-}
-
-
-// DATA 
 export const BDTienda = {
     clientes: [
         {
@@ -59,63 +35,63 @@ export const BDTienda = {
         {
             nombre: "Chevrolet Camaro",
             marca: Marcas.CHEVROLET,
-            vendido: false,
+            vendido: true,
             precio: 6000,
             codigo: "VL-002",
         },
         {
             nombre: "Toyota Corolla",
             marca: Marcas.TOYOTA,
-            vendido: false,
+            vendido: true,
             precio: 7000,
             codigo: "VL-003",
         },
         {
             nombre: "Honda Civic",
             marca: Marcas.HONDA,
-            vendido: false,
+            vendido: true,
             precio: 5500,
             codigo: "VL-004",
         },
         {
             nombre: "Nissan GT-R",
             marca: Marcas.NISSAN,
-            vendido: false,
+            vendido: true,
             precio: 8000,
             codigo: "VL-005",
         },
         {
             nombre: "Mazda MX-5",
             marca: Marcas.TOYOTA,
-            vendido: false,
+            vendido: true,
             precio: 4500,
             codigo: "VL-006",
         },
         {
             nombre: "BMW M3",
             marca: Marcas.FORD,
-            vendido: false,
+            vendido: true,
             precio: 9000,
             codigo: "VL-007",
         },
         {
             nombre: "Mercedes-Benz C-Class",
             marca: Marcas.CHEVROLET,
-            vendido: false,
+            vendido: true,
             precio: 8500,
             codigo: "VL-008",
         },
         {
             nombre: "Audi A4",
             marca: Marcas.HONDA,
-            vendido: false,
+            vendido: true,
             precio: 7500,
             codigo: "VL-009",
         },
         {
             nombre: "Volkswagen Golf",
             marca: Marcas.NISSAN,
-            vendido: false,
+            vendido: true,
             precio: 4000,
             codigo: "VL-010",
         },

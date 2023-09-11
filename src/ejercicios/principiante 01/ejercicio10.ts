@@ -10,3 +10,5 @@ const ventasRealizadas = BDTienda.ventas.filter((v)=>{
 
 
 console.log(ventasRealizadas)
+
+
