@@ -21,11 +21,9 @@ function clienteMasCompras() {
         }
       })
       .reduce((ventant, ventactu, index) => {
-        const vehiculo = vehiculos.find((vehiculo) => {
-          if (vehiculo.codigo === ventactu.vehiculo) {
-            return vehiculo;
-          }
-        });
+
+
+        const vehiculo = vehiculos.find((vehiculo) => vehiculo.codigo === ventactu.vehiculo);
 
         if (!vehiculo) return 0;
 
