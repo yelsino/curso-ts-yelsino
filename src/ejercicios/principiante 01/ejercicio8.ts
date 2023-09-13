@@ -1,3 +1,4 @@
+// 8. Muestra todos los clientes que han realizado compras.
 import { BDTienda } from "../BDTienda";
 
 const clientes = BDTienda.clientes;

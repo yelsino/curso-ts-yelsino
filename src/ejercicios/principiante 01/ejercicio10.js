@@ -7,4 +7,4 @@ var fechaBuscada = "2003-12-07";
 var ventasEncontradas = ventas.filter(function (venta) {
     return venta.fechaCompra === fechaBuscada;
 });
-console.log(typeof ventasEncontradas);
+console.log(ventasEncontradas);
