@@ -1,17 +1,12 @@
+const BDTienda = require;
 
-const BDTienda = require
+const valoresStrings = BDTienda.vehiculos.map((vehiculo) => {
+    return `${vehiculo.precio}`;
+});
 
-const valoresStrings = BDTienda.vehiculos.map((vehiculo) =>{
+console.log(valoresStrings);
 
-    return (`${vehiculo.precio}`)
-    
-    
-    })
-    
-    console.log(valoresStrings)
-    
-    const resultado = valoresStrings.map((valor)=>{
-    return  Number(valor)
-    
-    })
-    console.log(resultado)
+const resultado = valoresStrings.map((valor) => {
+    return Number(valor);
+});
+console.log(resultado);
