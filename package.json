@@ -3,5 +3,8 @@
     "@types/node": "^20.5.7",
     "canvas": "^2.11.2",
     "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "start": "tsc && cp -R src/ejercicios/avanzado03/*.json dist/ejercicios/avanzado03"
   }
 }

@@ -9,4 +9,4 @@
 // 27. Muestra los vehículos que han sido vendidos ordenados por fecha de compra.
 // 28. Calcula el total de ventas realizadas por cada marca de vehículo.
 // 29. Encuentra el cliente con más compras en un intervalo de fechas específico.
-// 30. Muestra los clientes que no han realizado compras.
+// 30. Encuentra la marca de vehículo más vendida y muestra el nombre de la marca y la cantidad total de unidades vendidas.

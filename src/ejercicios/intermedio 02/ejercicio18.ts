@@ -1,6 +1,7 @@
-// 18. Muestra todos los vehículos de la marca "Honda" que no han sido vendidos.
-import { Marcas } from "../BDTienda";
 import { BDTienda } from "../BDTienda";
+import { Marcas } from "../interfaces";
+
+// 18. Muestra todos los vehículos de la marca "Honda" que no han sido vendidos.
 const vehiculosHonda = BDTienda.vehiculos.filter((vehiculo) => {
   return vehiculo.marca == Marcas.HONDA;
 });

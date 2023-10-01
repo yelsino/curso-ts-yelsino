@@ -1,4 +1,4 @@
-export enum Marcas {
+enum Marcas {
     TOYOTA = "Toyota",
     FORD = "Ford",
     CHEVROLET = "Chevrolet",
@@ -6,6 +6,30 @@ export enum Marcas {
     NISSAN = "Nissan",
 }
 
+
+export interface Vehiculo {
+    nombre: string;
+    marca: Marcas;
+    vendido: false;
+    precio: number;
+    codigo: string;
+}
+
+export interface Cliete {
+    nombre: string;
+    documento: string;
+    codigo: string;
+}
+
+export interface Venta {
+    cliente: Cliete;
+    vehiculo: Vehiculo;
+    fechaCompra: Date;
+    codigo: string;
+}
+
+
+// DATA 
 export const BDTienda = {
     clientes: [
         {
@@ -23,32 +47,12 @@ export const BDTienda = {
             documento: "27068189",
             codigo: "CL-003",
         },
-        {
-            nombre: "Carlos RodrÃ­guez",
-            documento: "2758189",
-            codigo: "CL-004",
-        },
-        {
-            nombre: "Ruth Zeballos",
-            documento: "27064189",
-            codigo: "CL-005",
-        },
-        {
-            nombre: "Karina Manrrique",
-            documento: "27018189",
-            codigo: "CL-006",
-        },
-        {
-            nombre: "Carla Bastidas",
-            documento: "27028189",
-            codigo: "CL-007",
-        },
     ],
     vehiculos: [
         {
             nombre: "Ford Mustang",
             marca: Marcas.FORD,
-            vendido: true,
+            vendido: false,
             precio: 5000,
             codigo: "VL-001",
         },
@@ -62,28 +66,28 @@ export const BDTienda = {
         {
             nombre: "Toyota Corolla",
             marca: Marcas.TOYOTA,
-            vendido: true,
+            vendido: false,
             precio: 7000,
             codigo: "VL-003",
         },
         {
             nombre: "Honda Civic",
             marca: Marcas.HONDA,
-            vendido: true,
+            vendido: false,
             precio: 5500,
             codigo: "VL-004",
         },
         {
             nombre: "Nissan GT-R",
             marca: Marcas.NISSAN,
-            vendido: true,
+            vendido: false,
             precio: 8000,
             codigo: "VL-005",
         },
         {
             nombre: "Mazda MX-5",
             marca: Marcas.TOYOTA,
-            vendido: true,
+            vendido: false,
             precio: 4500,
             codigo: "VL-006",
         },
@@ -104,7 +108,7 @@ export const BDTienda = {
         {
             nombre: "Audi A4",
             marca: Marcas.HONDA,
-            vendido: true,
+            vendido: false,
             precio: 7500,
             codigo: "VL-009",
         },
@@ -115,180 +119,67 @@ export const BDTienda = {
             precio: 4000,
             codigo: "VL-010",
         },
-        {
-            nombre: "Toyota Corolla",
-            marca: Marcas.TOYOTA,
-            vendido: true,
-            precio: 6000,
-            codigo: "VL-011",
-        },
-        {
-            nombre: "Ford Explorer",
-            marca: Marcas.FORD,
-            vendido: true,
-            precio: 4000,
-            codigo: "VL-012",
-        },
-        {
-            nombre: "Chevrolet Silverado",
-            marca: Marcas.CHEVROLET,
-            vendido: false,
-            precio: 12000,
-            codigo: "VL-013",
-        },
-        {
-            nombre: "Honda Accord",
-            marca: Marcas.HONDA,
-            vendido: true,
-            precio: 4000,
-            codigo: "VL-014",
-        },
-        {
-            nombre: "Nissan Maxima",
-            marca: Marcas.NISSAN,
-            vendido: true,
-            precio: 8500,
-            codigo: "VL-015",
-        },
-        {
-            nombre: "Toyota Camry",
-            marca: Marcas.TOYOTA,
-            vendido: true,
-            precio: 12000,
-            codigo: "VL-016",
-        },
-        {
-            nombre: "Ford Mustang",
-            marca: Marcas.FORD,
-            vendido: false,
-            precio: 12000,
-            codigo: "VL-017",
-        },
-        {
-            nombre: "Chevrolet Impala",
-            marca: Marcas.CHEVROLET,
-            vendido: false,
-            precio: 8500,
-            codigo: "VL-018",
-        },
-        {
-            nombre: "Honda Civic",
-            marca: Marcas.NISSAN,
-            vendido: true,
-            precio: 4000,
-            codigo: "VL-019",
-        },
-        {
-            nombre: "Nissan Altima",
-            marca: Marcas.NISSAN,
-            vendido: false,
-            precio: 8500,
-            codigo: "VL-020",
-        }
-
     ],
     ventas: [
         {
             cliente: "CL-001",
-            vehiculo: "VL-001",
-            fechaCompra: "2023-12-01",
+            vehiculo: "VL-006",
+            fechaCompra: "2003-12-01",
             codigo: "COMP-0001",
         },
         {
             cliente: "CL-002",
-            vehiculo: "VL-002",
-            fechaCompra: "2022-11-15",
+            vehiculo: "VL-007",
+            fechaCompra: "2003-12-02",
             codigo: "COMP-0002",
         },
         {
             cliente: "CL-003",
-            vehiculo: "VL-003",
-            fechaCompra: "2021-10-30",
+            vehiculo: "VL-008",
+            fechaCompra: "2003-12-03",
             codigo: "COMP-0003",
         },
         {
             cliente: "CL-001",
-            vehiculo: "VL-004",
-            fechaCompra: "2020-09-20",
+            vehiculo: "VL-009",
+            fechaCompra: "2003-12-04",
             codigo: "COMP-0004",
         },
         {
             cliente: "CL-002",
-            vehiculo: "VL-005",
-            fechaCompra: "2019-08-05",
+            vehiculo: "VL-010",
+            fechaCompra: "2003-12-05",
             codigo: "COMP-0005",
         },
         {
-            cliente: "CL-004",
-            vehiculo: "VL-006",
-            fechaCompra: "2018-07-10",
+            cliente: "CL-003",
+            vehiculo: "VL-003",
+            fechaCompra: "2003-12-06",
             codigo: "COMP-0006",
         },
         {
             cliente: "CL-001",
-            vehiculo: "VL-007",
-            fechaCompra: "2017-06-25",
+            vehiculo: "VL-005",
+            fechaCompra: "2003-12-07",
             codigo: "COMP-0007",
         },
         {
-            cliente: "CL-005",
-            vehiculo: "VL-008",
-            fechaCompra: "2016-05-18",
+            cliente: "CL-002",
+            vehiculo: "VL-002",
+            fechaCompra: "2003-12-08",
             codigo: "COMP-0008",
         },
         {
             cliente: "CL-003",
-            vehiculo: "VL-009",
-            fechaCompra: "2015-04-03",
+            vehiculo: "VL-004",
+            fechaCompra: "2003-12-09",
             codigo: "COMP-0009",
         },
         {
-            cliente: "CL-006",
-            vehiculo: "VL-010",
-            fechaCompra: "2014-03-28",
+            cliente: "CL-001",
+            vehiculo: "VL-001",
+            fechaCompra: "2003-12-10",
             codigo: "COMP-0010",
-        },
-        {
-            cliente: "CL-001",
-            vehiculo: "VL-011",
-            fechaCompra: "2013-02-22",
-            codigo: "COMP-0011",
-        },
-        {
-            cliente: "CL-007",
-            vehiculo: "VL-012",
-            fechaCompra: "2012-01-17",
-            codigo: "COMP-0012",
-        },
-        {
-            cliente: "CL-001",
-            vehiculo: "VL-013",
-            fechaCompra: "2011-12-02",
-            codigo: "COMP-0013",
-        },
-        {
-            cliente: "CL-002",
-            vehiculo: "VL-014",
-            fechaCompra: "2010-11-07",
-            codigo: "COMP-0014",
-        },
-        {
-            cliente: "CL-005",
-            vehiculo: "VL-015",
-            fechaCompra: "2009-10-12",
-            codigo: "COMP-0015",
-        },
-        {
-            cliente: "CL-006",
-            vehiculo: "VL-016",
-            fechaCompra: "2008-09-27",
-            codigo: "COMP-0016",
-        },
-        {
-            cliente: "CL-007",
-            vehiculo: "VL-017",
-            fechaCompra: "2007-08-21",
-            codigo: "COMP-0017",
         },
     ],
 };

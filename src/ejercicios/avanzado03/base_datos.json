@@ -1,0 +1,153 @@
+{
+  "clientes": [
+    {
+      "codigo": "CL-001",
+      "documento": "77068189",
+      "nombre": "Juan PÃ©rez"
+    },
+    {
+      "codigo": "CL-002",
+      "documento": "67068189",
+      "nombre": "MarÃ­a GarcÃ­a"
+    },
+    {
+      "codigo": "CL-003",
+      "documento": "27068189",
+      "nombre": "Carlos RodrÃ­guez"
+    }
+  ],
+  "vehiculos": [
+    {
+      "codigo": "VL-001",
+      "marca": "Marcas.FORD",
+      "nombre": "Ford Mustang",
+      "precio": 5000,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-002",
+      "marca": "Marcas.CHEVROLET",
+      "nombre": "Chevrolet Camaro",
+      "precio": 6000,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-003",
+      "marca": "Marcas.TOYOTA",
+      "nombre": "Toyota Corolla",
+      "precio": 7000,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-004",
+      "marca": "Marcas.HONDA",
+      "nombre": "Honda Civic",
+      "precio": 5500,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-005",
+      "marca": "Marcas.NISSAN",
+      "nombre": "Nissan GT-R",
+      "precio": 8000,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-006",
+      "marca": "Marcas.TOYOTA",
+      "nombre": "Mazda MX-5",
+      "precio": 4500,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-007",
+      "marca": "Marcas.FORD",
+      "nombre": "BMW M3",
+      "precio": 9000,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-008",
+      "marca": "Marcas.CHEVROLET",
+      "nombre": "Mercedes-Benz C-Class",
+      "precio": 8500,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-009",
+      "marca": "Marcas.HONDA",
+      "nombre": "Audi A4",
+      "precio": 7500,
+      "vendido": false
+    },
+    {
+      "codigo": "VL-010",
+      "marca": "Marcas.NISSAN",
+      "nombre": "Volkswagen Golf",
+      "precio": 4000,
+      "vendido": false
+    }
+  ],
+  "ventas": [
+    {
+      "cliente": "CL-001",
+      "codigo": "COMP-0001",
+      "fechaCompra": "2003-12-01",
+      "vehiculo": "VL-006"
+    },
+    {
+      "cliente": "CL-002",
+      "codigo": "COMP-0002",
+      "fechaCompra": "2003-12-02",
+      "vehiculo": "VL-007"
+    },
+    {
+      "cliente": "CL-003",
+      "codigo": "COMP-0003",
+      "fechaCompra": "2003-12-03",
+      "vehiculo": "VL-008"
+    },
+    {
+      "cliente": "CL-001",
+      "codigo": "COMP-0004",
+      "fechaCompra": "2003-12-04",
+      "vehiculo": "VL-009"
+    },
+    {
+      "cliente": "CL-002",
+      "codigo": "COMP-0005",
+      "fechaCompra": "2003-12-05",
+      "vehiculo": "VL-010"
+    },
+    {
+      "cliente": "CL-003",
+      "codigo": "COMP-0006",
+      "fechaCompra": "2003-12-06",
+      "vehiculo": "VL-003"
+    },
+    {
+      "cliente": "CL-001",
+      "codigo": "COMP-0007",
+      "fechaCompra": "2003-12-07",
+      "vehiculo": "VL-005"
+    },
+    {
+      "cliente": "CL-002",
+      "codigo": "COMP-0008",
+      "fechaCompra": "2003-12-08",
+      "vehiculo": "VL-002"
+    },
+    {
+      "cliente": "CL-003",
+      "codigo": "COMP-0009",
+      "fechaCompra": "2003-12-09",
+      "vehiculo": "VL-004"
+    },
+    {
+      "cliente": "CL-001",
+      "codigo": "COMP-0010",
+      "fechaCompra": "2003-12-10",
+      "vehiculo": "VL-001"
+    }
+  ]
+}
