@@ -1,5 +1,3 @@
-import { obtenerVentas } from "./fetch";
-
 // 26. Calcula el total de ventas realizadas en el mes de diciembre.
 /**
  *  obtener ventas y trabajar con su atributo fechaCompra -> "2023-12-01"
@@ -11,41 +9,45 @@ import { obtenerVentas } from "./fetch";
  * entregar datos correspondientes, monto,fecha,cantidad ventas,
  */
 
+import { Venta } from "../interfaces";
+import { obtenerVehiculos, obtenerVentas } from "./fetch";
+
 interface VentaMes {
   mes: string;
   monto: number;
   cantidadVentas: number;
 }
 
-function calcularVentasEnDiciembre(): VentaMes {
-  const ventas = obtenerVentas();
+async function calcularVentasPorMes(mes: number): Promise<VentaMes> {
+  const ventas = await obtenerVentas;
+  const vehiculos = await obtenerVehiculos;
+
   // Filtrar las ventas que ocurrieron en diciembre
-  // const ventasEnDiciembre:Venta[] = BDTienda.ventas.filter((venta) => {
-  //   const fechaCompra = new Date(venta.fechaCompra);
-  //   return fechaCompra.getMonth() === 11;
-  // });
+  const ventasEnDiciembre: Venta[] = ventas.filter((venta) => {
+    const fechaCompra = new Date(venta.fechaCompra);
+    return fechaCompra.getMonth() === mes;
+  });
 
   // Calcular el total de ventas en diciembre sumando los precios de los vehículos vendidos
-  // const totalVentasEnDiciembre = ventasEnDiciembre.reduce((total, venta) => {
-  //   const vehiculo = BDTienda.vehiculos.find(
-  //     (veh) => veh.codigo === venta.vehiculo
-  //   );
-  //   if (vehiculo) {
-  //     return total + vehiculo.precio;
-  //   }
-  //   return total;
-  // }, 0);
+  const totalVentasEnDiciembre = ventasEnDiciembre.reduce((total, venta) => {
+    const vehiculo = vehiculos.find((veh) => veh.codigo === venta.vehiculo);
+    if (vehiculo) {
+      return total + vehiculo.precio;
+    }
+    return total;
+  }, 0);
 
-  return {
-    cantidadVentas: 0,
-    mes: "diciembre",
-    monto: 0,
+  const nombreMes = new Date(0, mes).toLocaleString("es", { month: "long" });
+
+  const ventaMes = {
+    cantidadVentas: ventasEnDiciembre.length,
+    mes: nombreMes,
+    monto: totalVentasEnDiciembre,
   };
-  // return {
-  //   cantidadVentas: ventasEnDiciembre.length,
-  //   mes: "diciembre",
-  //   monto: totalVentasEnDiciembre,
-  // };
+
+  console.log(ventaMes);
+
+  return ventaMes;
 }
 
-calcularVentasEnDiciembre();
+calcularVentasPorMes(11);

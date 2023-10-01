@@ -21,8 +21,8 @@ export interface Vehiculo {
 }
 
 export interface Venta {
-  cliente: Cliente;
-  vehiculo: Vehiculo;
+  cliente: string;
+  vehiculo: string;
   fechaCompra: string;
   codigo: string;
 }
