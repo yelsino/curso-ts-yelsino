@@ -23,31 +23,34 @@ async function calcularVentasPorMes(mes: number): Promise<VentaMes> {
   const vehiculos = await obtenerVehiculos;
 
   // Filtrar las ventas que ocurrieron en diciembre
-  const ventasEnDiciembre: Venta[] = ventas.filter((venta) => {
+  const ventasDelMes: Venta[] = ventas.filter((venta) => {
     const fechaCompra = new Date(venta.fechaCompra);
-    return fechaCompra.getMonth() === mes;
+    return fechaCompra.getMonth() === 11;
   });
 
   // Calcular el total de ventas en diciembre sumando los precios de los vehículos vendidos
-  const totalVentasEnDiciembre = ventasEnDiciembre.reduce((total, venta) => {
+  const totalVentasMes = ventasDelMes.reduce((total, venta) => {
     const vehiculo = vehiculos.find((veh) => veh.codigo === venta.vehiculo);
+
     if (vehiculo) {
       return total + vehiculo.precio;
     }
+    
     return total;
   }, 0);
 
   const nombreMes = new Date(0, mes).toLocaleString("es", { month: "long" });
 
   const ventaMes = {
-    cantidadVentas: ventasEnDiciembre.length,
+    cantidadVentas: ventasDelMes.length,
     mes: nombreMes,
-    monto: totalVentasEnDiciembre,
+    monto: totalVentasMes,
   };
 
   console.log(ventaMes);
-
+  
   return ventaMes;
 }
 
-calcularVentasPorMes(11);
+calcularVentasPorMes(11)
+
